@@ -1,0 +1,19 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { AppRouter } from '@routes/AppRouter';
+import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { setupStore } from '@store/store';
+
+const store = setupStore();
+
+ReactDOM.render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <Provider store={store}>
+        <AppRouter />
+      </Provider>
+    </BrowserRouter>
+  </React.StrictMode>,
+  document.getElementById('root')
+);
